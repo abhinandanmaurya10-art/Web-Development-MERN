@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubling</title>
+
+    <style>
+        .child{
+            margin: 24px;
+            padding: 24px;
+            background-color: aliceblue;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+
+        .container{
+            background-color: rgb(205, 205, 27);
+            margin: 24px;
+            padding: 24px;
+
+        }
+        .childContainer{
+            background-color: beige;
+            margin: 24px;
+            padding: 24px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <section class="childContainer">
+            <div class="child">
+                I am a child
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.querySelector(".child").addEventListener("click", (e) => {
+            e.stopPropagation()
+            alert("Child Was Clicked")
+        })
+        document.querySelector(".container").addEventListener("click", (e) => {
+            e.stopPropagation()
+            alert("Container Was Clicked")
+        })
+        document.querySelector(".childContainer").addEventListener("click", (e) => {
+            e.stopPropagation()
+            alert("ChildContainer Was Clicked")
+        })
+
+        function getrandomColor(){
+            let val1 = Math.floor(Math.random() * 256)
+            let val2 = Math.floor(Math.random() * 256)
+            let val3 = Math.floor(Math.random() * 256)
+
+            return `rgb(${val1} ${val2} ${val3})`
+        }
+
+        // let a = setInterval(() => {
+        //     document.querySelector(".childContainer").style.backgroundColor = getrandomColor()
+        // },1000);
+
+        // console.log(a)
+
+
+        let a = setTimeout(() => {
+            
+        }, 3000);(() => {
+            document.querySelector(".childContainer").style.backgroundColor = getrandomColor()
+        },1000);
+
+        console.log(a)
+
+
+    </script>
+
+</body>
+
+</html>
