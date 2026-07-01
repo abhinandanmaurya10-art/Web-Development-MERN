@@ -1,0 +1,25 @@
+{
+  "name": "layout-design",
+  "version": "1.0.0",
+  "description": "Card layout design",
+  "keywords": [
+    "javascript",
+    "tailwind"
+  ],
+  "license": "ISC",
+  "author": "Abhinandan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "vite"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19"
+  },
+  "dependencies": {
+    "vite": "^8.0.16"
+  }
+}
