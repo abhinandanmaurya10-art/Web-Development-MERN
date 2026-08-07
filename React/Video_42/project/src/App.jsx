@@ -9,26 +9,17 @@ import Navbar from './components/Navbar'
 function App() {
   const [count, setCount] = useState(0)
   const [first, firstchanged] = useState(0)
+  const [color, setColor] = useState(0)
+ 
 
   useEffect(() => {
-    alert("Hey Welcome to my page.")
-  
-  }, [])
-
-  useEffect(() => {
-    alert("Count was changed.")
+    alert("count was changed")
+    setColor(color+1)
   
   }, [count])
-
-  useEffect(() => {
-    alert("first was changed.")
-  
-  }, [first])
-  
-
   return (
     <>
-    <Navbar color={"navy" + "blue"} />
+    {/* <Navbar color={"navy" + "blue"+ color} /> */}
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
